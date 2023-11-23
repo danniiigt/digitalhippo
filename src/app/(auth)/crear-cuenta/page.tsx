@@ -2,7 +2,6 @@ import CreateAccountForm from "@/components/CreateAccountForm";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
-import React from "react";
 
 const Page = () => {
   return (

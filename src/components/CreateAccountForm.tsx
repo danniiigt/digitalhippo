@@ -10,6 +10,7 @@ import {
   AuthCredentialsValidator,
   TAuthCredentialsValidator,
 } from "@/lib/validators/account-credentials-validator";
+import { trpc } from "@/trpc/client";
 
 const CreateAccountForm = () => {
   const {
@@ -20,7 +21,18 @@ const CreateAccountForm = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const onSubmit = ({}: TAuthCredentialsValidator) => {};
+  const { mutate, isLoading } = trpc.auth.createUser.useMutation({});
+
+  const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
+    // send data to server
+    mutate({
+      email,
+      password,
+    });
+  };
+
+  console.log(errors);
+  console.log(isLoading);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
