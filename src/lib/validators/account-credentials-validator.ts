@@ -1,7 +1,14 @@
 import { z } from "zod";
 
 export const AuthCredentialsValidator = z.object({
-  email: z.string().email(),
+  email: z
+    .string()
+    .min(1, {
+      message: "El email no puede estar vacío",
+    })
+    .email({
+      message: "El email no es válido",
+    }),
   password: z
     .string()
     .min(6, {

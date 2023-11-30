@@ -4,9 +4,13 @@ import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
+import { getServerSideUser } from "@/lib/payload-utils";
+import { cookies } from "next/headers";
+import UserAccountNav from "./UserAccountNav";
 
-const Navbar = () => {
-  const user = null;
+const Navbar = async () => {
+  const nextCookies = cookies();
+  const { user } = await getServerSideUser(nextCookies);
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16 backdrop-blur-lg">
@@ -41,6 +45,13 @@ const Navbar = () => {
                     </Button>
                   </>
                 )}
+
+                {user && <UserAccountNav user={user} />}
+
+                <span
+                  className="h-6 w-px bg-gray-200"
+                  aria-hidden="true"
+                ></span>
 
                 <div className="ml-4 flow-root lg:ml-6">
                   <Cart />

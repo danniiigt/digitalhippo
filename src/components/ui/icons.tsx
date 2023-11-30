@@ -4,6 +4,7 @@ import {
   ChevronsUpDown,
   FileEdit,
   FilePlus,
+  LayoutDashboard,
   LucideProps,
   Pencil,
   Plus,
@@ -89,6 +90,7 @@ export const Icons = {
   arrowLeftRight: ArrowLeftRight,
   filePlus: FilePlus,
   chevronDown: ChevronDown,
+  dashboard: LayoutDashboard,
   calendarGrid: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       viewBox="0 0 24 24"

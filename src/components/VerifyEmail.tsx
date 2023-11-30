@@ -14,7 +14,7 @@ export const VerifyEmail = ({ token }: { token: string }) => {
 
   useEffect(() => {
     if (data?.success) {
-      router.replace("/");
+      router.replace("/iniciar-sesion");
       toast.success("¡Tu cuenta ha sido verificada!");
     }
   }, [data, router]);

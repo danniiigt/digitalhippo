@@ -3,9 +3,12 @@ import { getPayloadClient } from "./lib/get-payload";
 import { nextApp, nextHandler } from "./next-utils";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { appRouter } from "./trpc";
+import { inferAsyncReturnType } from "@trpc/server";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
+
+export type ExpressContext = inferAsyncReturnType<typeof createContext>;
 
 const createContext = ({
   req,
