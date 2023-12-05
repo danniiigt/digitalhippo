@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import ProductReel from "@/components/ProductReel";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Leaf, PackageCheck, ShieldCheck } from "lucide-react";
 import Link from "next/link";
@@ -61,6 +62,15 @@ const Page = () => {
         </div>
 
         {/* TODO: Listar productos */}
+        <ProductReel
+          title="Mi primer producto"
+          subtitle="Este es mi primer producto en DigitalHippo"
+          href="/productos"
+          query={{
+            sort: "desc",
+            limit: 4,
+          }}
+        />
       </MaxWidthWrapper>
 
       <section className="border-t border-gray-200 bg-gray-50">

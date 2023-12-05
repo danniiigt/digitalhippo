@@ -12,6 +12,12 @@ const Users: CollectionConfig = {
   access: {
     read: () => true,
     create: () => true,
+    update: ({ req }) => req.user.role === "admin",
+    delete: ({ req }) => req.user.role === "admin",
+  },
+  admin: {
+    hidden: ({ user }) => user.role !== "admin",
+    defaultColumns: ["id"],
   },
   fields: [
     {
