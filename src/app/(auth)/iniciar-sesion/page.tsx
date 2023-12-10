@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 import SignInForm from "@/components/SignInForm";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Iniciar sesión - DigitalHippo",
+};
 
 const Page = () => {
   return (

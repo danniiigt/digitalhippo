@@ -1,7 +1,12 @@
 import CreateAccountForm from "@/components/CreateAccountForm";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Iniciar sesión - DigitalHippo",
+};
 
 const Page = () => {
   return (

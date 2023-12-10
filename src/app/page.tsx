@@ -1,7 +1,8 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Leaf, PackageCheck, ShieldCheck } from "lucide-react";
+import { Leaf, PackageCheck, ShieldCheck } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 
@@ -31,6 +32,10 @@ const perks: Perk[] = [
       "Donamos el 1% de todas nuestras ventas a organizaciones eco-friendly.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "DigitalHippo - Productos Digitales",
+};
 
 const Page = () => {
   return (

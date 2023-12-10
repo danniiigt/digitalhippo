@@ -1,9 +1,14 @@
 import { VerifyEmail } from "@/components/VerifyEmail";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined };
 }
+
+export const metadata: Metadata = {
+  title: "Iniciar sesión - DigitalHippo",
+};
 
 const Page = ({ searchParams }: PageProps) => {
   const { token, to: toEmail } = searchParams;
