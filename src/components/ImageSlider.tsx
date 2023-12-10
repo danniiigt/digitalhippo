@@ -12,9 +12,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ImageSliderProps {
   urls: string[];
+  allowZoom?: boolean;
 }
 
-const ImageSlider = ({ urls }: ImageSliderProps) => {
+const ImageSlider = ({ urls, allowZoom = false }: ImageSliderProps) => {
   const [swiper, setSwiper] = useState<null | SwiperType>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -83,11 +84,16 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
         className="h-full w-full"
       >
         {urls.map((url, i) => (
-          <SwiperSlide key={i} className="-z-10 relative h-full w-full">
+          <SwiperSlide key={i} className="-z-10 relative h-full w-full group">
             <Image
               fill
               loading="eager"
-              className="-z-10 h-full w-full object-cover object-center"
+              className={cn(
+                "-z-10 h-full w-full object-cover object-center  transition-all duration-300",
+                {
+                  "group-hover:scale-110": allowZoom,
+                }
+              )}
               src={url}
               alt="Product image"
             />

@@ -10,7 +10,7 @@ export type ProductCategory = {
 
 export const PRODUCT_CATEGORIES = [
   {
-    label: "UI Kits",
+    label: "Kits UI",
     value: "ui_kits" as const,
     featured: [
       {
@@ -31,7 +31,7 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    label: "Icons",
+    label: "Iconos",
     value: "icons" as const,
     featured: [
       {
