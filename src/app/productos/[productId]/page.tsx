@@ -100,7 +100,7 @@ const ProductPage = async ({ params: { productId } }: PageProps) => {
                 <div className="text-muted-foreground">{label}</div>
               </div>
 
-              <AddToCartButton />
+              <AddToCartButton product={product} />
 
               <Separator className="my-6" />
 
