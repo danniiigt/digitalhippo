@@ -117,10 +117,13 @@ dependencies:
     specifier: ^3.22.4
     version: 3.22.4
   zustand:
-    specifier: ^4.4.7
+    specifier: ^4.4.6
     version: 4.4.7(@types/react@18.2.37)(react@18.2.0)
 
 devDependencies:
+  '@types/body-parser':
+    specifier: ^1.19.5
+    version: 1.19.5
   '@types/express':
     specifier: ^4.17.20
     version: 4.17.21
