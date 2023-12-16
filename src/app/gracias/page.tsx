@@ -9,10 +9,16 @@ import { PaymentStatus } from "@/components/PaymentStatus";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 
 interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined };
 }
+
+export const metadata: Metadata = {
+  title: "Gracias por tu pedido - DigitalHippo",
+  description: "Gracias por tu pedido",
+};
 
 const GraciasPage = async ({ searchParams }: PageProps) => {
   const orderId = searchParams.orderId;

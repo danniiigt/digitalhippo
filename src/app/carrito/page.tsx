@@ -229,7 +229,7 @@ const Cart = () => {
                   (isLoading && (
                     <Icons.spinner className="w-4 h-4 text-background animate-spin" />
                   ))}
-                {isMounted && "Continuar"}
+                {isMounted && !isLoading && "Continuar"}
               </Button>
             </div>
           </section>

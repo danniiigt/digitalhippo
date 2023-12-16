@@ -49,6 +49,7 @@ export const PaymentStatus = ({
           <div className="flex items-center text-orange-500 gap-x-2">
             <p>Pendiente</p>
             <Icons.clock className="w-4 h-4" />
+            {/* <Icons.spinner className="w-4 h-4 animate-spin text-gray-600" /> */}
           </div>
         )}
       </div>
